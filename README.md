@@ -1,3 +1,4 @@
+Part 1
 1. created empty folder "russischessen" and open in VSC
 2. npm init -y
 3. mkdir frontend (creates frontend inside "learnDB")
@@ -11,7 +12,7 @@
 in backend 
 9. create index.js (require('dotenv').config(), const express, const app, const PORT, app.listen)
 
-10. global file .env (PORT=5000, MONGO_URI=)
+10. BACKEND file (when it was global it didnt work, i mean PORT did but later MONGO_URI didnt) .env (PORT=5000, MONGO_URI=)
 11. global file .gitignore ()
 
 12. node backend/index.js (to check if server is running)
@@ -45,3 +46,29 @@ in global
 22. npm run dev
 
 EVERYTHING SHOULD WORK!! FRONT+BACK RUNNING WITH ONE COMMAND
+
+Part 2
+BACKEND
+1. cd backend
+2. create folders (config, models, data)
+3. in config folder create db.js (fill it up!!!!)
+4. in index.js copy paste (require('./config/db'))
+
+MONGODB ATLAS - lovro123
+1. a)left up (folder icon) create new project b) name c)create project
+2. a) build a cluster b) free c)aws - frankfurt AND (below) Cluster name d) create cluster
+3. Database access
+4. a) add new database user b) password c) add user
+5. Network access
+6. a) Add an IP address b) allow access from anywhere c) confirm
+7. Clusters
+8. a) connect b) connect your application c) copy MONGO_URI (that string with password and dbname)
+
+BACKEND
+1. .env (paste MONGO_URI) and change password and db name
+2. cd backend
+3. node index.js
+
+EVERYTHING SHOULD WORK!! YOUR ATLAS SHOULD BE CONNECTED
+
+Part 3
