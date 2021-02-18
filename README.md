@@ -72,3 +72,11 @@ BACKEND
 EVERYTHING SHOULD WORK!! YOUR ATLAS SHOULD BE CONNECTED
 
 Part 3
+BACKEND
+1. in models folder create product.model.js (fill it up!!!!)
+2. in data folder create shopItems.js (fill it up!!!!)(i skipped this part and insertedMany in seederScript)
+3. in backend create seederScript.js file (fill it up!!!!)
+4. in package.json add another script ("data:import": "node backend/seederScript")
+5. npm run data:import (go to ATLAS - clusters - your cluster - collections)(if there are problems add ip adress in atlas - network access)
+
+EVERYTHING SHOULD WORK!! YOUR ITEMS SHOULD BE IN ATLAS
