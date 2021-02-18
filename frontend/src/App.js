@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from "react";
+import { Switch, Route, withRouter } from "react-router-dom";
+import axios from "axios";
+import Home from './components/Home';
 
 function App() {
+
+  const [foods, setFoods] = useState([])
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/foods", { withCredentials: true })
+    .then((response) => {
+      console.log(response.data)
+      setFoods(response.data)
+    })
+    .catch((err) => {
+      console.log('this is error: ', err)
+    })
+  }, [])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>RussischFood</h1>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return <Home foods={foods} />;
+          }}
+        />
+        </Switch>
     </div>
   );
 }
 
 export default App;
+
+

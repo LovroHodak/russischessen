@@ -80,3 +80,106 @@ BACKEND
 5. npm run data:import (go to ATLAS - clusters - your cluster - collections)(if there are problems add ip adress in atlas - network access)
 
 EVERYTHING SHOULD WORK!! YOUR ITEMS SHOULD BE IN ATLAS
+
+Part 4 
+BACKEND
+1. folder routes inside file products.routes.js (fill it up!!!!)
+
+2. go to index.js 
+a) npm i body-parser cors
+b) add cors and body parser
+c) add routes
+
+FRONTEND
+1. clean src (delete: setupTests, reportWebVitals, App.test.js, logo, )
+2. cd frontend
+3. npm i react-router-dom axios
+4. go to index.js and import {browserRouter}
+5. go to App.js and import {useState, useEffect} {Switch, Route, withRouter} and axios (export default withRouter(App))
+6. useEffect - with axios fetch data and setState to response.data
+7. create components folder and inside Home component
+8. in App create Switch and inside put Route with exact path which renders Home and sends state to it
+
+EVERYTHING SHOULD WORK!! YOUR WEBSITE WORKS
+
+
+
+
+
+
+
+
+
+
+
+
+
+part 5
+LATER
+w3d7 - 2:35min
+
+Heroku
+1. dashboard.herokuapp.com
+2. a) new b) create new app c) name d) region e) create app
+
+FRONTEND
+3. cd frontend
+4. npm run build (create build folder in frontend)
+
+HEROKU
+6. settings - reveal config vars
+a) key: MONGO_URI
+b) value: copy paste from .env
+c) press add
+
+BACKEND
+7. global npm i path
+8. in backend index.js import path and add: (app.use(express.static(path.join(__dirname, 'public')));)
+9. in backend create folder public
+
+FRONTEND
+10. go to clientSide frontend-build and copy paste everything from there to BACKEND-public folder 
+
+BACKEND
+11. in global
+12. heroku login
+13. press any key to open in browser (it opens heroku-login in browser)
+
+HEROKU-LOGIN
+14. press log in
+
+HEROKU
+15. go to deploy and scrole down and copy paste (heroku git:remote -a <name>)
+
+BACKEND
+16. in global
+17. heroku git:remote -a <name>
+18. git add .
+19. git commit -m ""
+20. git push heroku main
+21. when it finishes you will get 
+(remote:        https://<name>.herokuapp.com/ deployed to Heroku)
+
+EVERYTHING SHOULD WORK!! YOU HAVE DEPLOYED IT AND IT WORKS BUT IT IS NOT YET FETCHING DATA FROM DATABASE
+
+FRONTEND
+1. in src create new file config.js
+2. inside create (export const API_URL = 'https://<name>.herokuapp.com/api')
+
+3. in App.js (import {API_URL} from './config')
+4. in all axios requests change quotes to backticks and url with API_URL
+5. axios.get(`${API_URL}/products`, { withCredentials: true })
+
+6. in frontend i deleted build
+7. cd frontend
+8. npm run build
+9. go to clientSide frontend-build and copy paste (and replace) everything from there to BACKEND-public folder
+10. cd .. (in global)
+11. heroku git:remote -a <name>
+12. git add .
+13. git commit -m ""
+14. git push heroku main
+
+
+EVERYTHING SHOULD WORK!! FINISH!!!
+link: https://atlasanddeploy.herokuapp.com/
